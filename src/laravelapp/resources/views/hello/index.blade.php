@@ -17,11 +17,19 @@
 </head>
 <body>
 <h1>Blade/Index</h1>
-@if ($msg !='')
-    <p>こんにちは{{$msg}}</p>
-@else
-    <p>msgなし</p>
-@endif
+<p>&#64;foreachディレクティブの例</p>
+<ol>
+    @foreach($data as $item)
+        @if ($loop->first)
+            <p>データ一覧</p>
+            <ul>
+                @endif
+                <li>No, {{$loop->iteration}}.{{$item}}</li>
+                @if ($loop->last)
+            </ul><p>ここまで</p>
+        @endif
+    @endforeach
+</ol>
 <form method="post" action="/hello">
     @csrf
     <input type="text" name="msg">
