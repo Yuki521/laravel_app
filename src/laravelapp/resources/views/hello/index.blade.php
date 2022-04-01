@@ -17,6 +17,15 @@
 </head>
 <body>
 <h1>Blade/Index</h1>
-<p>{{$msg}}</p>
+@if ($msg !='')
+    <p>こんにちは{{$msg}}</p>
+@else
+    <p>msgなし</p>
+@endif
+<form method="post" action="/hello">
+    @csrf
+    <input type="text" name="msg">
+    <input type="submit">
+</form>
 </body>
 </html>
