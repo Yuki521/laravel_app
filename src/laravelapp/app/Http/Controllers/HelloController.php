@@ -9,12 +9,7 @@ class HelloController extends Controller
 {
     public function index()
     {
-        $data = [
-            ['name'=>'yamada','mail'=>'yuki@test.com'],
-            ['name'=>'yamada2','mail'=>'yuki@test.com2'],
-            ['name'=>'yamada3','mail'=>'yuki@test.com3'],
-        ];
-        return view('hello.index',['data'=>$data]);
+        return view('hello.index',['message'=>'hello!']);
     }
 
     public function post(Request $request)
