@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Person extends Model
 {
+    public function boards()
+    {
+        return $this->hasMany('App\Board');
+    }
+
     protected $guarded = ['id'];
 
     public static $rules = [
